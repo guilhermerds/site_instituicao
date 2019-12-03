@@ -1,0 +1,35 @@
+<html>
+<head>
+<meta charset ="UTF-8">
+<link rel="stylesheet" type="text/css" href="html_estilo.css">
+<title> Exclusão</title>
+</head>
+    <script>
+        function blokletras(objEvent){
+            var ikeycode;
+            ikeycode=objEvent.keyCode;
+            if(ikeycode>=48 && ikeycode<=57) return true;
+            return false;
+        }
+        
+        function valida(){
+                vazio=false;
+                if(document.form.Cod.value==""){
+                    alert("O nome tem que ser preenchido");
+                    vazio=true;
+                }
+                 
+                 if(vazio==false){
+                     document.form.submit();
+                }
+        }
+    </script>
+<body>
+<form action="Del_Alu.php"  method="post" name="form">
+<p>Codigo da Matricula</p>
+<input type="text" name="Cod" class="caixa" maxlength="4" onkeypress="return blokletras(event)" autocomplete="off">
+<br>
+<input type="button" value="Deletar" class="botao" onclick="valida()">
+</form>
+</body>
+</html>

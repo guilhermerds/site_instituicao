@@ -1,0 +1,28 @@
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="html_estilo.css">
+<meta charset ="UTF-8">
+<title> Pesquisa</title>
+</head>
+    <script>
+        function valida(){
+                vazio=false;
+                if(document.form.Nome.value==""){
+                    alert("O Nome tem que ser preenchido");
+                    vazio=true;
+                }
+                 
+                 if(vazio==false){
+                     document.form.submit();
+                }
+        }
+    </script>
+<body>
+<form action="Pesq_Cur.php"  method="post" name="form">
+<p>Nome do Curso</p> 
+<input type="text" maxlength="28" name="Nome" class="caixa" autocomplete="off">
+<br>
+<input type="button" value="Pesquisar" class="botao" onclick="valida()">
+</form>
+</body>
+</html>

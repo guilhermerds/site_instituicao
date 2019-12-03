@@ -1,0 +1,72 @@
+*{
+	font-family: "Helvetica Neue", Helvetica, Sans-serif;
+	text-align: center;
+}
+
+/*Eslilo botão*/
+.botao{
+	border-radius: 15px;
+	border: none;
+	cursor: pointer;  
+	padding: 8px 10px;
+	color: #fff;
+	background: #f44;
+	transition: 0.5s;
+	font-size: 14px;
+}
+
+.botao:hover{
+	transition: 0.5s;
+	background: #1FAEC4;
+}
+
+ /*Estilização caixa de texto*/
+ input.caixa{
+ 	 width: 250px; 
+ 	 border-width: 0px;
+ 	 border-bottom-width: 2px;
+ 	 border-bottom-color: #f44;
+ 	 padding: 5px;
+ 	 margin-bottom: 10px;
+ 	 background: #fff;
+ 	 padding-bottom: 0px;
+ 	 border-radius: 2px;
+ 	 transition: 700s;
+ }
+
+input.caixa:focus{
+	transition: 0.7s;
+	border-bottom-color: #1FAEC4;
+ 	background: #fff;
+	outline: thin dotted;
+    outline: 0px auto -webkit-focus-ring-color;
+    outline-offset: 0px;
+}
+
+/*Alterando o tamanho do campo caso for numero*/
+
+input[type="number"]{
+	width: 70px;
+}
+
+/*Alinhamento do paragrafo com a caixa de texto*/
+
+p{
+	font-size: 17px;
+	padding-right: 5px;
+	display: inline-block;
+}
+
+/*Remover a flechas do campo de numero*/
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type="password"]{
+	width: 110px;
+}
+input[name="Usuario"]{
+	width: 150px;
+}

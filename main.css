@@ -1,0 +1,155 @@
+body{
+    margin: 0;
+}
+/*Base CSS*/
+* {
+	margin: 0;
+	padding: 0; 
+	font-family: "Helvetica Neue", Helvetica, Sans-serif; 
+}
+     
+h2 {
+	font-size: 35px;
+	font-weight: bold; 
+	color: #fff;
+}
+
+p.subt{
+	font-size: 20px;
+}
+
+#menu p { 
+	color: #C4C4C4;
+	padding: 5px 0;
+}
+
+
+/*Esconder botão*/
+#toggle{
+	position: absolute;
+	cursor: pointer;
+	left: -100%;
+	top:-100%;
+}
+
+/*Estilo do menu*/
+
+#menu{
+	background:#272727;
+	color: #fff;
+	position: absolute;
+	top: -250px;
+	left: 0px;
+	width: 100%;
+	height: 250px;
+	padding: 20px;
+	transition: top 300ms cubic-bezier(0.17,0.4,0.03,0.94);
+	overflow: hidden;
+	box-sizing: border-box;
+}
+
+#menu-lista h3{
+	font-size: 20pt;
+	margin-bottom: 12px
+}
+
+#menu-lista p{
+	padding: 4px 10px;
+}
+
+/*Seletor Irmão adjacente*/
+#toggle+label{
+	position: absolute;
+	cursor: pointer;
+	padding: 10px;
+	background: #f44;
+	width: 100px;
+	border-radius: 45px;
+	padding: 8px 10px;
+	color: #fff;
+	line-height: 20px;
+	font-size: 14px;
+	text-align: center;
+	margin: 15px 20px;
+	transition: all 500ms ease;
+}
+
+/*estilizar a ação do clique anterior btn abrir*/
+
+#toggle+label:after{
+	content: "Menu";
+}
+
+/*Seletor avançado*/
+
+#toggle:checked~#menu {
+	top: 0px;
+}
+
+/* Transição suave para container */
+
+main {
+	transition: margin 300ms cubic-bezier(0.15,0.04,0.03,0.94);
+	padding: 5em 1em; 
+}
+
+#toggle:checked~main {
+	margin-top: 250px;
+}
+
+/*Atribui a cor para fechar quando o toggle estiver
+checado */	
+
+#toggle:checked+label { 
+	background: #1FAEC4;
+}
+
+#toggle:checked+label:after {
+	content: "Fechar";
+}
+
+
+/*Estilização do submenu*/
+
+ul{
+	list-style: none;
+	text-align: center;
+}
+
+li{
+	text-align: center;
+	display: inline-block;
+	padding: 15px;
+}
+
+#menu a{
+	text-decoration: none;
+}
+
+iframe#conteudo{
+	margin-top: -80px;
+	margin-bottom: -85px;
+	width: 100%;
+	height: 660px;
+	border: none;
+}
+
+/*Barra de rolagem*/
+::-webkit-scrollbar{
+	width: 6px;
+	height: 0px;
+}
+
+::-webkit-scrollbar-thumb{
+	background: #999;
+	border-radius: 5px;
+}
+
+::-webkit-scrollbar-track-piece {
+	background: #fff;
+}
+
+::-webkit-scrollbar-button {
+	background: #fff;
+	height: 5px;
+}

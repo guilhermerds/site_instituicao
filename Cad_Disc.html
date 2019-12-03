@@ -1,0 +1,42 @@
+<html>
+<head>
+<meta charset ="UTF-8">
+<link rel="stylesheet" type="text/css" href="html_estilo.css">
+<title> Inserção</title>
+</head>
+    <script>
+        function blokletras(objEvent){
+            var ikeycode;
+            ikeycode=objEvent.keyCode;
+            if(ikeycode>=48 && ikeycode<=57) return true;
+            return false;
+        }
+        
+        function valida(){
+            vazio=false;
+            if(document.form.Cod.value==""){
+                alert("O Codigo tem que ser preenchido");
+                vazio=true;
+            }
+            if(document.form.Nome.value==""){
+                alert("O Nome tem que ser preenchido");
+                vazio=true;
+            }
+
+             if(vazio==false){
+                 document.form.submit();
+            }
+        }
+    </script>
+<body>
+<form action="Cad_Disc.php"  method="post" name="form">
+<p>Codigo da Disciplina</p>
+<input type="text" name="Cod" onkeypress="return blokletras(event)" maxlength="2" class="caixa" autocomplete="off">
+<br>
+<p>Nome da Disciplina</p>
+<input type="text" name="Nome" class="caixa" autocomplete="off">
+<br>
+<input type="button" value="Cadastro"  onclick="valida()" class="botao">
+</form>
+</body>
+</html>

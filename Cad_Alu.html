@@ -1,0 +1,63 @@
+<html>
+<head>
+<meta charset ="UTF-8">
+<link rel="stylesheet" type="text/css" href="html_estilo.css">
+<title> Inserção</title>
+</head>
+    <script>
+        function blokletras(objEvent){
+            var ikeycode;
+            ikeycode=objEvent.keyCode;
+            if(ikeycode>=48 && ikeycode<=57) return true;
+            return false;
+        }
+        
+        function valida(){
+            vazio=false;
+            if(document.form.Cod.value==""){
+                alert("O Codigo tem que ser preenchido");
+                vazio=true;
+            }
+            if(document.form.Nome.value==""){
+                alert("O Nome tem que ser preenchido");
+                vazio=true;
+            }
+            if(document.form.Endereco.value==""){
+                alert("O Endereço tem que ser preenchido");
+                vazio=true;
+            }
+            if(document.form.Cidade.value==""){
+                alert("A Cidade tem que ser preenchida");
+                vazio=true;
+            }
+            if(document.form.Codcur.value==""){
+                alert("O Codigo do curso tem que ser preenchido");
+                vazio=true;
+            }
+
+             if(vazio==false){
+                 document.form.submit();
+            }
+        }
+    </script>
+<body>
+<form action="Cad_Alu.php"  method="post" name="form">
+<p>Matricula do Aluno</p>
+<input type="text" name="Cod" onkeypress="return blokletras(event)" maxlength="4" class="caixa" autocomplete="off">
+<br>
+<p>Nome</p>
+<input type="text" name="Nome" class="caixa" autocomplete="off">
+<br>
+<p>Endereço</p>
+<input type="text" name="Endereco" class="caixa" autocomplete="off">
+<br>
+<p>Cidade</p>
+<input type="text" name="Cidade" class="caixa" autocomplete="off">
+<br>
+<p>Código do Curso</p>
+<input type="text" name="Codcur" onkeypress="return blokletras(event)" maxlength="2" class="caixa" autocomplete="off">
+<br>
+<input type="button" value="Cadastro" onclick="valida()" class="botao">
+</form>
+</body>
+</html>
